@@ -65,9 +65,7 @@ function App() {
     });
 
     store.dispatch(loadUser());
-    if (isAuthenticated) {
       getStripeApiKey();
-    }
   }, []);
 
   // window.addEventListener("contextmenu", (e) => e.preventDefault());
@@ -112,7 +110,7 @@ function App() {
               </Elements>
             } 
             />
-          )}
+        )}
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
