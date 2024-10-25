@@ -2,6 +2,7 @@ import React from "react";
 import playStore from "../../images/playstore.png";
 import appStore from "../../images/Appstore.png";
 import logo from "../../images/logo2.png";
+import "./layout.css"
 
 const Footer = () => {
   return (

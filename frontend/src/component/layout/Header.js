@@ -1,46 +1,38 @@
-import React from 'react'
-import { ReactNavbar } from "overlay-navbar";
+import './Header.css';
+import { Link } from 'react-router-dom';
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import PersonIcon from "@material-ui/icons/Person";
 import logo from "../../images/logo2.png";
-import "./layout.css"
-
-const options = {
-  burgerColorHover: "#eb4034",
-  logo,
-  logoWidth: "20vmax",
-  navColor1: "white",
-  logoHoverSize: "10px",
-  logoHoverColor: "#eb4034",
-  link1Text: "Home",
-  link2Text: "Products",
-  link3Text: "Contact",
-  link4Text: "About",
-  link1Url: "/",
-  link2Url: "/products",
-  link3Url: "/contact",
-  link4Url: "/about",
-  link1Size: "1.3vmax",
-  link1Color: "rgba(35, 35, 35,0.8)",
-  nav1justifyContent: "flex-end",
-  nav2justifyContent: "flex-end",
-  nav3justifyContent: "flex-start",
-  nav4justifyContent: "flex-start",
-  link1ColorHover: "#eb4034",
-  link1Margin: "1vmax",
-  profileIconUrl: "/login",
-  searchIconUrl: "/search",
-  profileIconColor: "rgba(35, 35, 35,0.8)",
-  searchIconColor: "rgba(35, 35, 35,0.8)",
-  cartIconColor: "rgba(35, 35, 35,0.8)",
-  profileIconColorHover: "#eb4034",
-  searchIconColorHover: "#eb4034",
-  cartIconColorHover: "#eb4034",
-  cartIconMargin: "1vmax",
-};
 
 const Header = () => {
-  return (
-    <ReactNavbar {...options}/>
-  )
-}
 
-export default Header
+  return (
+    <nav>
+      <div class="navbar">
+        <div class="container1 nav-container">
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>  
+          <div class="logo">
+          <Link to='/'><img src={logo} alt="" /></Link>
+          </div>
+          <div class="menu-items">
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/about'>About</Link></li>
+            <li><Link to='/products'>Product</Link></li>
+            <li><Link to='/contact'>Contacts</Link></li>
+            <li><Link to='/search'><SearchIcon className='header_Icon'/></Link></li>
+            <li><Link to='/cart'><ShoppingCartIcon className='header_Icon' /></Link></li>
+            <li><Link to='/login'><PersonIcon className='header_Icon' /></Link></li>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Header;
